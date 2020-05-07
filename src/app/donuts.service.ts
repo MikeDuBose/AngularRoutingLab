@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DonutService {
-  apiUrl = 'https://grandcircusco.github.io/demo-apis/donuts.json';
+  apiUrl = 'https://grandcircusco.github.io/demo-apis';
   constructor(private http:HttpClient) { }
  
   getDonuts() {
-    return this.http.get<Donut>(`${this.apiUrl}`)
+    return this.http.get<Donut>(`${this.apiUrl}/donuts.json`)
   }
 
   getDonutDetail(id:number) {

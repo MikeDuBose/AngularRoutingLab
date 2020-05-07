@@ -19,11 +19,13 @@ export class DonutDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.id = +params['id'];
+    this.id = +params['id'];
 
       this.donutData.getDonutDetail(this.id).subscribe(
         (data: DonutDetail) => this.donut = { ...data },
         error => console.error(error)
+
+        
       );
     })
   }
